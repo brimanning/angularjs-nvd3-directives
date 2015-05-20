@@ -167,7 +167,7 @@
                 link: function(scope, element, attrs){
                     scope.$watch('width + height', function() { updateDimensions(scope,attrs,element,scope.chart); });
                     scope.$watchGroup(['data', 'forcex', 'forcey'], function(newValues){
-                        data = newValues['data'];
+                        var data = newValues.data;
                         if (data && angular.isDefined(scope.filtername) && angular.isDefined(scope.filtervalue)) {
                             data =  $filter(scope.filtername)(data, scope.filtervalue);
                         }
@@ -322,7 +322,7 @@
                 link: function(scope, element, attrs){
                     scope.$watch('width + height', function() { updateDimensions(scope,attrs,element,scope.chart); });
                     scope.$watchGroup(['data', 'forcex', 'forcey'], function(newValues){
-                        data = newValues['data'];
+                        var data = newValues.data;
                         if (data && angular.isDefined(scope.filtername) && angular.isDefined(scope.filtervalue)) {
                             data =  $filter(scope.filtername)(data, scope.filtervalue);
                         }
@@ -487,7 +487,7 @@
                 link: function(scope, element, attrs){
                     scope.$watch('width + height', function() { updateDimensions(scope,attrs,element,scope.chart); });
                     scope.$watchGroup(['data', 'forcex', 'forcey'], function(newValues){
-                        data = newValues['data'];
+                        var data = newValues.data;
                         if (data && angular.isDefined(scope.filtername) && angular.isDefined(scope.filtervalue)) {
                             data =  $filter(scope.filtername)(data, scope.filtervalue);
                         }
@@ -685,7 +685,7 @@
                 link: function(scope, element, attrs){
                     scope.$watch('width + height', function() { updateDimensions(scope,attrs,element,scope.chart); });
                     scope.$watchGroup(['data', 'forcey'], function(newValues){
-                        data = newValues['data'];
+                        var data = newValues.data;
                         if (data && angular.isDefined(scope.filtername) && angular.isDefined(scope.filtervalue)) {
                             data =  $filter(scope.filtername)(data, scope.filtervalue);
                         }
@@ -826,7 +826,7 @@
                 link: function(scope, element, attrs){
                     scope.$watch('width + height', function() { updateDimensions(scope,attrs,element,scope.chart); });
                     scope.$watchGroup(['data', 'forcey'], function(newValues){
-                        data = newValues['data'];
+                        var data = newValues.data;
                         if (data && angular.isDefined(scope.filtername) && angular.isDefined(scope.filtervalue)) {
                             data =  $filter(scope.filtername)(data, scope.filtervalue);
                         }
@@ -969,7 +969,7 @@
                 link: function(scope, element, attrs){
                     scope.$watch('width + height', function() { updateDimensions(scope,attrs,element,scope.chart); });
                     scope.$watchGroup(['data', 'forcey'], function(newValues){
-                        data = newValues['data'];
+                        var data = newValues.data;
                         if (data && angular.isDefined(scope.filtername) && angular.isDefined(scope.filtervalue)) {
                             data =  $filter(scope.filtername)(data, scope.filtervalue);
                         }
@@ -1112,7 +1112,7 @@
                 link: function(scope, element, attrs){
                     scope.$watch('width + height', function() { updateDimensions(scope,attrs,element,scope.chart); });
                     scope.$watchGroup(['data', 'forcey'], function(newValues){
-                        data = newValues['data'];
+                        var data = newValues.data;
                         if (data && angular.isDefined(scope.filtername) && angular.isDefined(scope.filtervalue)) {
                             data =  $filter(scope.filtername)(data, scope.filtervalue);
                         }
@@ -1377,7 +1377,7 @@
                 link: function(scope, element, attrs){
                     scope.$watch('width + height', function() { updateDimensions(scope,attrs,element,scope.chart); });
                     scope.$watchGroup(['data', 'forcex', 'forcey'], function(newValues){
-                        data = newValues['data'];
+                        var data = newValues.data;
                         if (data && angular.isDefined(scope.filtername) && angular.isDefined(scope.filtervalue)) {
                             data =  $filter(scope.filtername)(data, scope.filtervalue);
                         }
@@ -1578,7 +1578,7 @@
                 link: function(scope, element, attrs){
                     scope.$watch('width + height', function() { updateDimensions(scope,attrs,element,scope.chart); });
                     scope.$watchGroup(['data', 'forcex', 'forcey'], function(newValues){
-                        data = newValues['data'];
+                        var data = newValues.data;
                         if (data && angular.isDefined(scope.filtername) && angular.isDefined(scope.filtervalue)) {
                             data =  $filter(scope.filtername)(data, scope.filtervalue);
                         }
@@ -1751,7 +1751,7 @@
                 link: function(scope, element, attrs){
                     scope.$watch('width + height', function() { updateDimensions(scope,attrs,element,scope.chart); });
                     scope.$watchGroup(['data', 'forcex', 'forcey'], function(newValues){
-                        data = newValues['data'];
+                        var data = newValues.data;
                         if (data && angular.isDefined(scope.filtername) && angular.isDefined(scope.filtervalue)) {
                             data =  $filter(scope.filtername)(data, scope.filtervalue);
                         }
@@ -1952,7 +1952,7 @@
                 link: function(scope, element, attrs){
                     scope.$watch('width + height', function() { updateDimensions(scope,attrs,element,scope.chart); });
                     scope.$watchGroup(['data', 'forcex', 'forcey'], function(newValues){
-                        data = newValues['data'];
+                        var data = newValues.data;
                         if (data && angular.isDefined(scope.filtername) && angular.isDefined(scope.filtervalue)) {
                             data =  $filter(scope.filtername)(data, scope.filtervalue);
                         }
