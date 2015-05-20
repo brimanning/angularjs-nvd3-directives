@@ -68,6 +68,9 @@ function configureXaxis(chart, scope, attrs) {
 	if (attrs.xaxislabeldistance) {
 		chart.xAxis.axisLabelDistance((+attrs.xaxislabeldistance));
 	}
+	if (attrs.forcex) {
+		chart.forceX(attrs.forcex);
+	}
 }
 
 function configureX2axis (chart, scope, attrs) {
@@ -211,6 +214,9 @@ function configureYaxis (chart, scope, attrs) {
 	}
 	if (attrs.yaxislabeldistance) {
 		chart.yAxis.axisLabelDistance((+attrs.yaxislabeldistance));
+	}
+	if (attrs.forcey) {
+		chart.forceY(attrs.forcey);
 	}
 }
 

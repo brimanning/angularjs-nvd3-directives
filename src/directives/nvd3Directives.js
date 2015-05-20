@@ -89,8 +89,8 @@
                     color: '&',
                     x: '&',
                     y: '&',
-                    forcex: '@',
-                    forcey: '@',
+                    forcex: '=',
+                    forcey: '=',
                     isArea: '@',
                     interactive: '@',
                     clipedge: '@',
@@ -166,7 +166,8 @@
                 }],
                 link: function(scope, element, attrs){
                     scope.$watch('width + height', function() { updateDimensions(scope,attrs,element,scope.chart); });
-                    scope.$watch('data', function(data){
+                    scope.$watchGroup(['data', 'forcex', 'forcey'], function(newValues){
+                        data = newValues['data'];
                         if (data && angular.isDefined(scope.filtername) && angular.isDefined(scope.filtervalue)) {
                             data =  $filter(scope.filtername)(data, scope.filtervalue);
                         }
@@ -242,8 +243,8 @@
                     color: '&',
                     x: '&',
                     y: '&',
-                    forcex: '@',
-                    forcey: '@',
+                    forcex: '=',
+                    forcey: '=',
                     isArea: '@',
                     interactive: '@',
                     clipedge: '@',
@@ -320,7 +321,8 @@
                 }],
                 link: function(scope, element, attrs){
                     scope.$watch('width + height', function() { updateDimensions(scope,attrs,element,scope.chart); });
-                    scope.$watch('data', function(data){
+                    scope.$watchGroup(['data', 'forcex', 'forcey'], function(newValues){
+                        data = newValues['data'];
                         if (data && angular.isDefined(scope.filtername) && angular.isDefined(scope.filtervalue)) {
                             data =  $filter(scope.filtername)(data, scope.filtervalue);
                         }
@@ -395,8 +397,8 @@
                     color: '&',
                     x: '&',
                     y: '&',
-                    forcex: '@', //List of numbers to Force into the X scale (ie. 0, or a max / min, etc.)
-                    forcey: '@', // List of numbers to Force into the Y scale
+                    forcex: '=', //List of numbers to Force into the X scale (ie. 0, or a max / min, etc.)
+                    forcey: '=', // List of numbers to Force into the Y scale
                     forcesize: '@', // List of numbers to Force into the Size scale
 
                     interactive: '@',
@@ -484,7 +486,8 @@
                 }],
                 link: function(scope, element, attrs){
                     scope.$watch('width + height', function() { updateDimensions(scope,attrs,element,scope.chart); });
-                    scope.$watch('data', function(data){
+                    scope.$watchGroup(['data', 'forcex', 'forcey'], function(newValues){
+                        data = newValues['data'];
                         if (data && angular.isDefined(scope.filtername) && angular.isDefined(scope.filtervalue)) {
                             data =  $filter(scope.filtername)(data, scope.filtervalue);
                         }
@@ -608,7 +611,7 @@
                     x: '&',
                     y: '&',
                     //forcex is not exposed in the nvd3 multibar.js file.  it is not here on purpose.
-                    forcey: '@',
+                    forcey: '=',
                     delay: '@',
                     stacked: '@',
 
@@ -681,7 +684,8 @@
                 }],
                 link: function(scope, element, attrs){
                     scope.$watch('width + height', function() { updateDimensions(scope,attrs,element,scope.chart); });
-                    scope.$watch('data', function(data){
+                    scope.$watchGroup(['data', 'forcey'], function(newValues){
+                        data = newValues['data'];
                         if (data && angular.isDefined(scope.filtername) && angular.isDefined(scope.filtervalue)) {
                             data =  $filter(scope.filtername)(data, scope.filtervalue);
                         }
@@ -751,7 +755,7 @@
                     x: '&',
                     y: '&',
                     //forcex is not exposed in the nvd3 multibar.js file.  it is not here on purpose.
-                    forcey: '@',
+                    forcey: '=',
                     showvalues: '@',
                     valueformat: '&',
 
@@ -821,7 +825,8 @@
                 }],
                 link: function(scope, element, attrs){
                     scope.$watch('width + height', function() { updateDimensions(scope,attrs,element,scope.chart); });
-                    scope.$watch('data', function(data){
+                    scope.$watchGroup(['data', 'forcey'], function(newValues){
+                        data = newValues['data'];
                         if (data && angular.isDefined(scope.filtername) && angular.isDefined(scope.filtervalue)) {
                             data =  $filter(scope.filtername)(data, scope.filtervalue);
                         }
@@ -886,8 +891,8 @@
                     nodata: '@',
                     x: '&',
                     y: '&',
-    //                forcex: '@',
-                    forcey: '@',
+    //                forcex: '=',
+                    forcey: '=',
                     isarea: '@',
                     interactive: '@',
                     clipedge: '@',
@@ -963,7 +968,8 @@
                 }],
                 link: function(scope, element, attrs){
                     scope.$watch('width + height', function() { updateDimensions(scope,attrs,element,scope.chart); });
-                    scope.$watch('data', function(data){
+                    scope.$watchGroup(['data', 'forcey'], function(newValues){
+                        data = newValues['data'];
                         if (data && angular.isDefined(scope.filtername) && angular.isDefined(scope.filtervalue)) {
                             data =  $filter(scope.filtername)(data, scope.filtervalue);
                         }
@@ -1031,8 +1037,8 @@
                     nodata: '@',
                     x: '&',
                     y: '&',
-                    //forcex: '@',  //forcex is rebound from multibarhorizontalchart, but is not on multibar
-                    forcey: '@',
+                    //forcex: '=',  //forcex is rebound from multibarhorizontalchart, but is not on multibar
+                    forcey: '=',
                     stacked: '@',
                     showvalues: '@',
                     valueformat: '&',
@@ -1105,7 +1111,8 @@
                 }],
                 link: function(scope, element, attrs){
                     scope.$watch('width + height', function() { updateDimensions(scope,attrs,element,scope.chart); });
-                    scope.$watch('data', function(data){
+                    scope.$watchGroup(['data', 'forcey'], function(newValues){
+                        data = newValues['data'];
                         if (data && angular.isDefined(scope.filtername) && angular.isDefined(scope.filtervalue)) {
                             data =  $filter(scope.filtername)(data, scope.filtervalue);
                         }
@@ -1290,8 +1297,8 @@
                     x: '&',
                     y: '&',
                     size: '&',
-                    forceX: '@',
-                    forceY: '@',
+                    forceX: '=',
+                    forceY: '=',
                     forceSize: '@',
                     xrange: '&',
                     xdomain: '&',
@@ -1369,7 +1376,8 @@
                 }],
                 link: function(scope, element, attrs){
                     scope.$watch('width + height', function() { updateDimensions(scope,attrs,element,scope.chart); });
-                    scope.$watch('data', function(data){
+                    scope.$watchGroup(['data', 'forcex', 'forcey'], function(newValues){
+                        data = newValues['data'];
                         if (data && angular.isDefined(scope.filtername) && angular.isDefined(scope.filtervalue)) {
                             data =  $filter(scope.filtername)(data, scope.filtervalue);
                         }
@@ -1491,8 +1499,8 @@
                     x: '&',
                     y: '&',
                     size: '&',
-                    forceX: '@',
-                    forceY: '@',
+                    forceX: '=',
+                    forceY: '=',
                     forceSize: '@',
                     xrange: '&',
                     xdomain: '&',
@@ -1569,7 +1577,8 @@
                 }],
                 link: function(scope, element, attrs){
                     scope.$watch('width + height', function() { updateDimensions(scope,attrs,element,scope.chart); });
-                    scope.$watch('data', function(data){
+                    scope.$watchGroup(['data', 'forcex', 'forcey'], function(newValues){
+                        data = newValues['data'];
                         if (data && angular.isDefined(scope.filtername) && angular.isDefined(scope.filtervalue)) {
                             data =  $filter(scope.filtername)(data, scope.filtervalue);
                         }
@@ -1634,8 +1643,8 @@
                     tooltips: '@',
                     showxaxis: '@',
                     showyaxis: '@',
-                    forceX: '@',
-                    forceY: '@',
+                    forceX: '=',
+                    forceY: '=',
                     forceY2: '@',
                     rightalignyaxis: '@',
                     defaultstate: '@',
@@ -1741,7 +1750,8 @@
                 }],
                 link: function(scope, element, attrs){
                     scope.$watch('width + height', function() { updateDimensions(scope,attrs,element,scope.chart); });
-                    scope.$watch('data', function(data){
+                    scope.$watchGroup(['data', 'forcex', 'forcey'], function(newValues){
+                        data = newValues['data'];
                         if (data && angular.isDefined(scope.filtername) && angular.isDefined(scope.filtervalue)) {
                             data =  $filter(scope.filtername)(data, scope.filtervalue);
                         }
@@ -1824,8 +1834,8 @@
                     color: '&',
                     x: '&',
                     y: '&',
-                    forceX: '@',
-                    forceY: '@',
+                    forceX: '=',
+                    forceY: '=',
                     clipedge: '@',
                     clipvoronoi: '@',
                     interpolate: '@',
@@ -1941,7 +1951,8 @@
                 }],
                 link: function(scope, element, attrs){
                     scope.$watch('width + height', function() { updateDimensions(scope,attrs,element,scope.chart); });
-                    scope.$watch('data', function(data){
+                    scope.$watchGroup(['data', 'forcex', 'forcey'], function(newValues){
+                        data = newValues['data'];
                         if (data && angular.isDefined(scope.filtername) && angular.isDefined(scope.filtervalue)) {
                             data =  $filter(scope.filtername)(data, scope.filtervalue);
                         }
